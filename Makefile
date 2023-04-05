@@ -3,9 +3,12 @@ IMAGESOUT=$(patsubst notebooks/%,slides/%,$(IMAGESIN))
 NBFILES=$(wildcard notebooks/*.ipynb)
 HTMLFILES=$(patsubst notebooks/%.ipynb,slides/%.slides.html,$(NBFILES))
 
-slides: html
+slides: html css
 
 images: slides/images $(IMAGESOUT)
+
+css: styles.css
+	cp styles.css slides/
 
 slides/images:
 	mkdir -p slides/images
