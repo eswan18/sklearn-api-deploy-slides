@@ -32,3 +32,10 @@
   color: rgb(206, 2, 2);
   font-weight: bold;
 }
+
+.ethan-watermark {
+  position: absolute;
+  right: 10px;
+  font-size: 0.5em;
+  color: rgb(160, 160, 160)
+}

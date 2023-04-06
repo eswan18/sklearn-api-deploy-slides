@@ -16,7 +16,7 @@ slides/images:
 $(IMAGESOUT): slides/images/%: notebooks/images/%
 	cp -a $< $@
 
-html: images $(HTMLFILES)
+html: images $(HTMLFILES) custom-template.tpl
 
 $(HTMLFILES): slides/%.slides.html: notebooks/%.ipynb
 	bash scripts/generate_slides.sh $<
