@@ -1,3 +1,22 @@
-.jp-RenderedHTMLCommon h1 {
-  color: red;
+/* Presentation Title */
+.jp-RenderedHTMLCommon div.prez-title + h1 {
+  font-size: 4em;
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid gray;
+}
+/* Presentation Subtitle */
+.jp-RenderedHTMLCommon div.prez-title + h1 + p {
+  margin-left: 1em;
+}
+
+/* Section Title */
+.jp-RenderedHTMLCommon div.section-title + h1 {
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid gray;
+}
+
+/* Your Turn slides */
+.jp-RenderedHTMLCommon div.your-turn + h1 + ol > li::marker {
+  color: rgb(206, 2, 2);
+  font-weight: bold;
 }
