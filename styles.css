@@ -16,7 +16,7 @@
 }
 
 /* Your Turn slides */
-.jp-RenderedHTMLCommon div.your-turn + h1 + ol > li::marker {
+.jp-RenderedHTMLCommon div.your-turn + h1 ~ ol > li::marker {
   color: rgb(206, 2, 2);
   font-weight: bold;
 }
