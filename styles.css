@@ -1,3 +1,15 @@
+/*********** 
+  General 
+************/
+/* Fixes some weird spacing when a list follows a paragraph */
+.jp-RenderedHTMLCommon p:has(+ ul), .jp-RenderedHTMLCommon p:has(+ ol) {
+  margin-bottom: 0.5em;
+}
+/* Headings that come after other text should have a top margin */
+.jp-RenderedHTMLCommon p + h2, .jp-RenderedHTMLCommon p + h3, .jp-RenderedHTMLCommon ul + h2, .jp-RenderedHTMLCommon ul + h3 {
+  margin-top: 0.8em;
+}
+
 /* Presentation Title */
 .jp-RenderedHTMLCommon div.prez-title + h1 {
   font-size: 4em;
