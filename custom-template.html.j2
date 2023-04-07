@@ -8,11 +8,12 @@
 {% block footer_js %}
 {{ super() }}
 <script>
+    // Add a watermark to each slide.
     var slides = document.querySelectorAll(".slides > section");
     slides.forEach((slideNode) => {
         const watermarkDiv = document.createElement("div");
         const watermarkP = document.createElement("p");
-        watermarkP.textContent = "Ethan Swan, @eswan18";
+        watermarkP.innerHTML = "Ethan Swan<br>@eswan18";
         watermarkDiv.appendChild(watermarkP);
         watermarkDiv.classList.add("ethan-watermark");
         slideNode.appendChild(watermarkDiv);

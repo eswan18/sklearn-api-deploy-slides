@@ -36,6 +36,7 @@
 .ethan-watermark {
   position: absolute;
   right: 10px;
-  font-size: 0.5em;
-  color: rgb(160, 160, 160)
+  font-size: 0.4em;
+  color: rgb(160, 160, 160);
+  text-align: right;
 }
