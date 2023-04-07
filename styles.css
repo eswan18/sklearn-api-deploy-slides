@@ -36,7 +36,15 @@
 .ethan-watermark {
   position: absolute;
   right: 10px;
+  bottom: 10px;
   font-size: 0.4em;
   color: rgb(160, 160, 160);
   text-align: right;
+}
+
+.watermark-twitter-logo {
+  display: inline;
+  height: 1.2em;
+  margin-right: 0.2em;
+  vertical-align: middle;
 }
