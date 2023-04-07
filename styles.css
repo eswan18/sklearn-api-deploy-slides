@@ -9,6 +9,11 @@
 .jp-RenderedHTMLCommon p + h2, .jp-RenderedHTMLCommon p + h3, .jp-RenderedHTMLCommon ul + h2, .jp-RenderedHTMLCommon ul + h3 {
   margin-top: 0.8em;
 }
+/* The default size for code blocks is too small */
+.jp-RenderedHTMLCommon pre {
+  font-size: 1em;
+}
+
 
 /* Presentation Title */
 .jp-RenderedHTMLCommon div.prez-title + h1 {
@@ -31,6 +36,17 @@
 .jp-RenderedHTMLCommon div.your-turn + h1 ~ ol > li::marker {
   color: rgb(206, 2, 2);
   font-weight: bold;
+}
+
+/* Slides that need to be squeezed to fit */
+.slide-squeeze ~ p {
+  font-size: 0.8em;
+}
+.slide-squeeze ~ h1 {
+  font-size: 2.8em;
+}
+.slide-squeeze ~ h2 {
+  font-size: 1.8em;
 }
 
 .ethan-watermark {
