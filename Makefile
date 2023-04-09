@@ -16,10 +16,13 @@ slides/images:
 $(IMAGESOUT): slides/images/%: notebooks/images/%
 	cp -a $< $@
 
-html: images $(HTMLFILES) custom-template.html.j2
+html: images $(HTMLFILES) custom-template.html.j2 slides/index.html
 
 $(HTMLFILES): slides/%.slides.html: notebooks/%.ipynb
 	bash scripts/generate_slides.sh $<
+
+slides/index.html:
+	cp index.html slides/
 
 clean:
 	rm -rf slides/
