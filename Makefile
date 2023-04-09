@@ -3,11 +3,14 @@ IMAGESOUT=$(patsubst notebooks/%,slides/%,$(IMAGESIN))
 NBFILES=$(wildcard notebooks/*.ipynb)
 HTMLFILES=$(patsubst notebooks/%.ipynb,slides/%.slides.html,$(NBFILES))
 
-slides: html css
+.PHONY:
+	images clean html
+
+slides: html slides/styles.css
 
 images: slides/images $(IMAGESOUT)
 
-css: styles/styles.css
+slides/styles.css: styles/styles.css
 	cp styles/styles.css slides/
 
 slides/images:
@@ -26,3 +29,4 @@ slides/index.html:
 
 clean:
 	rm -rf slides/
+
