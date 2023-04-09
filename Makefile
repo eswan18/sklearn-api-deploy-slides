@@ -7,8 +7,8 @@ slides: html css
 
 images: slides/images $(IMAGESOUT)
 
-css: styles.css
-	cp styles.css slides/
+css: styles/styles.css
+	cp styles/styles.css slides/
 
 slides/images:
 	mkdir -p slides/images
@@ -16,13 +16,13 @@ slides/images:
 $(IMAGESOUT): slides/images/%: notebooks/images/%
 	cp -a $< $@
 
-html: images $(HTMLFILES) custom-template.html.j2 slides/index.html
+html: images $(HTMLFILES) slides/index.html
 
-$(HTMLFILES): slides/%.slides.html: notebooks/%.ipynb
+$(HTMLFILES): slides/%.slides.html: notebooks/%.ipynb styles/custom-template.html.j2 
 	bash scripts/generate_slides.sh $<
 
 slides/index.html:
-	cp index.html slides/
+	cp styles/index.html slides/
 
 clean:
 	rm -rf slides/

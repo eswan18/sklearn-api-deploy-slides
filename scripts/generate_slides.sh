@@ -13,4 +13,4 @@ cd notebooks
 # images are copied over to slides/ by the Makefile
 NB_PATH="$1"
 REL_NB=${NB_PATH/#notebooks\//}
-jupyter nbconvert --to slides $REL_NB --output-dir=../slides --template-file=../custom-template.html.j2
+jupyter nbconvert --to slides $REL_NB --output-dir=../slides --template-file=../styles/custom-template.html.j2
