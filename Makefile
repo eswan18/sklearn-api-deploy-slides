@@ -4,7 +4,7 @@ NBFILES=$(wildcard notebooks/*.ipynb)
 HTMLFILES=$(patsubst notebooks/%.ipynb,slides/%.slides.html,$(NBFILES))
 
 .PHONY:
-	images clean html
+	images clean html index
 
 slides: html slides/styles.css
 
@@ -19,12 +19,14 @@ slides/images:
 $(IMAGESOUT): slides/images/%: notebooks/images/%
 	cp -a $< $@
 
-html: images $(HTMLFILES) slides/index.html
+html: images $(HTMLFILES) index
 
 $(HTMLFILES): slides/%.slides.html: notebooks/%.ipynb styles/custom-template.html.j2 
 	bash scripts/generate_slides.sh $<
 
-slides/index.html:
+index: slides/index.html
+	
+slides/index.html: styles/index.html
 	cp styles/index.html slides/
 
 clean:
